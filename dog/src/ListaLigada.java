@@ -46,7 +46,7 @@ public class ListaLigada {
         Dog anterior = null;
         Dog atual = this.primeiro;
         for(int i=0; i < this.getTamanho(); i++){
-            if (atual.getValor().equalsIgnoreCase(valorProcurado)){
+            if (atual.getNome().equalsIgnoreCase(valorProcurado)){
                 if (this.tamanho == 1){
                     this.primeiro = null;
                     this.ultimo = null;
@@ -71,7 +71,7 @@ public class ListaLigada {
         Dog anterior = null;
         Dog atual = this.primeiro;
         for(int i=0; i < this.getTamanho(); i++){
-            if (atual.getValor().equalsIgnoreCase(String.valueOf(posicaoProcurada))){
+            if (atual.getNome().equalsIgnoreCase(String.valueOf(posicaoProcurada))){
                 if (this.tamanho == 1){
                     this.primeiro = null;
                     this.ultimo = null;

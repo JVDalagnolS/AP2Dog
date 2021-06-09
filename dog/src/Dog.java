@@ -1,17 +1,36 @@
 public class Dog {
-    private String valor;
+    private String nome;
+    private String raca;
+    private String idade;
     private Dog proximo;
 
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+
     public Dog(String novoDog){
-        this.valor = novoDog;
+        this.nome = novoDog;
     }
 
-    public String getValor() {
-        return valor;
+
+    public String getNome() {
+        return nome;
     }
 
-    public void setValor(String valor) {
-        this.valor = valor;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Dog getProximo() {
