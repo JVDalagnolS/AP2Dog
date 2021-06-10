@@ -1,8 +1,14 @@
 public class Dog {
-    private String nome;
-    private String raca;
-    private String idade;
-    private Dog proximo;
+    String nome;
+    String raca;
+    int idade;
+    Dog proximo;
+
+    public Dog(String nome, String raca, int idade) {
+        this.nome = nome;
+        this.raca = raca;
+        this.idade = idade;
+    }
 
     public String getRaca() {
         return raca;
@@ -12,11 +18,11 @@ public class Dog {
         this.raca = raca;
     }
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
@@ -39,6 +45,11 @@ public class Dog {
 
     public void setProximo(Dog proximo) {
         this.proximo = proximo;
+    }
+    public void mostrar(){
+        System.out.println("\nnome: "+nome);
+        System.out.println("idade: "+idade);
+        System.out.println("raça: "+raca);
     }
 
 

@@ -1,31 +1,68 @@
+import jdk.jshell.spi.ExecutionControl;
+
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        Scanner tc = new Scanner(System.in);
+
         ListaLigada lista = new ListaLigada();
-        lista.adicionar("pipoca");
-        lista.adicionar("lucky");
-        lista.adicionar("puuts");
-        lista.adicionar("pituca");
+        //verifica se a lista está vazia
+        lista.isEmpty();
 
-        System.out.println("tem: " + lista.getTamanho() + " cachorros");
-        System.out.println("\nprimeiro dog: " + lista.getPrimeiro().getNome());
-        System.out.println("\núltimo dog: " + lista.getUltimo().getNome());
 
-        System.out.println("\n"+lista.get(0).getNome());
-        System.out.println("\n"+lista.get(1).getNome());
-        System.out.println("\n"+lista.get(2).getNome());
-        System.out.println("\n"+lista.get(3).getNome());
+        //adicionar cachorros
+        Dog cachorro1 = new Dog("pipoca", "spitz", 9);
+        lista.adicionar(cachorro1);
 
-        //lista.removerPosicao(1);
-        //System.out.println("\nRemoveu o cachorro pipoca");
+        Dog cachorro2 = new Dog("pituca", "cane curso", 5);
+        lista.adicionar(cachorro2);
 
-        lista.remover("pipoca");
-        System.out.println("\nRemoveu o cachorro pipoca");
+        Dog cachorro3 = new Dog("lucky", "pastor alemão", 4);
+        lista.adicionar(cachorro3);
 
-        System.out.println("Tamanho: " + lista.getTamanho());
-        for(int i=0; i < lista.getTamanho(); i++) {
-            System.out.println(lista.get(i).getNome());
-        }
+        //adicionar cachorros pela posição
+        Dog cachorro4 = new Dog("baruck ", "vira lata ", 10);
+        lista.adicionar(2, cachorro4);
+
+        //iforma o tamanho da lista
+        System.out.println("\ntem: " + lista.getTamanho() + " cachorros");
+        //mostra o total de itens na lista
+        System.out.println("\nos cachorros são: ");
+        lista.list();
+
+        //verifica se a lista está vazia
+        lista.isEmpty();
+
+        //mostra o primeiro cachorro e o ultimo
+        System.out.println("\nprimeiro cachorro: " + lista.getPrimeiro().getNome());
+        System.out.println("\núltimo cachorro: " + lista.getUltimo().getNome());
+
+        System.out.printf("-----------------------------------");
+        //remove um cachorro pela posição
+        lista.remover(2);
+        //remove um cachorro pelo nome
+        lista.remover("lucky");
+        System.out.printf("\nverificar se removeu os itens");
+        lista.list();
+
+        //tamanho da lista
+        lista.size();
+
+        //verifica se a lista está vazia
+        lista.isEmpty();
+
+        //retorna a posiçao em que o cachorro está
+        //System.out.printf("retorna a posiçao em que o cachorro está");
+        //System.out.println(lista.indexOf(cachorro1));
+        System.out.println("Informe o nome do cachorro: ");
+        String n= tc.next();
+
+        Dog c= new Dog(n);
+
+        System.out.println(lista.indexOf(c));
 
     }
 }
